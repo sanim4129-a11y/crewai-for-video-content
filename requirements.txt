@@ -1,0 +1,9 @@
+crewai
+crewai-tools
+openai
+moviepy
+ffmpeg-python
+pydub
+langchain
+pandas
+requests
