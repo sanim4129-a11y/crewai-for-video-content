@@ -1,4 +1,5 @@
 from crewai import Agent
+from llm import gemini_llm
 
 media_research_agent = Agent(
     role="Media Researcher",
@@ -13,5 +14,6 @@ media_research_agent = Agent(
         "is accurate and visually supported with relevant material."
     ),
     verbose=True,
-    tools=[]  # will connect later in tools.py
+    tools=[],  # will connect later in tools.py
+    llm=gemini_llm,
 )

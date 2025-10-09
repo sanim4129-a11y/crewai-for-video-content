@@ -28,24 +28,23 @@ yt_tool = YoutubeVideoSearchTool()
 media_tools = [web_search_tool, pdf_tool, csv_tool, yt_tool]
 
 
-import openai
 import os
+from elevenlabs import generate, save
+from elevenlabs.client import ElevenLabs
 
 class TextToSpeechTool(BaseTool):
     name: str = "Text to Speech Tool"
     description: str = "Converts text to speech and saves it as an audio file."
-    voice: str = "alloy"
-    model: str = "gpt-4o-mini-tts"
-    client: Any = Field(default_factory=lambda: openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY")))
+    voice_id: str = "21m00Tcm4TlvDq8ikWAM"  # A default voice ID
+    client: Any = Field(default_factory=lambda: ElevenLabs(api_key=os.getenv("ELEVENLABS_API_KEY")))
 
     def _run(self, text: str, output_path: str) -> str:
-        response = self.client.audio.speech.create(
-            model=self.model,
-            voice=self.voice,
-            input=text
+        audio = generate(
+            text=text,
+            voice=self.voice_id,
+            model="eleven_multilingual_v2"
         )
-        with open(output_path, "wb") as f:
-            f.write(response.read())
+        save(audio, output_path)
         return output_path
 
 tts_tool = TextToSpeechTool()

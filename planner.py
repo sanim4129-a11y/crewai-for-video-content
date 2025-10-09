@@ -2,6 +2,7 @@
 
 from crewai import Agent
 from config import MAX_VIDEO_DURATION
+from llm import gemini_llm
 
 planner_agent = Agent(
     role="Content Planner",
@@ -16,4 +17,5 @@ planner_agent = Agent(
         "flow, logical sequencing, and approximate length."
     ),
     verbose=True,
+    llm=gemini_llm,
 )

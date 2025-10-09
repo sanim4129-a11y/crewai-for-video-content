@@ -1,7 +1,7 @@
 # tests/test_narration.py
 
-from crewai_project.agents import narration_agent
-from crewai_project.tasks import narration_task
+from agents import narration_agent
+from tasks import narration_task
 
 def test_narration():
     inputs = {"script": "This is a sample narration."}

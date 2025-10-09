@@ -1,4 +1,5 @@
 from crewai import Agent
+from llm import gemini_llm
 
 narration_agent = Agent(
     role="Narration Generator",
@@ -12,4 +13,5 @@ narration_agent = Agent(
         "realistic delivery and consistent tone."
     ),
     verbose=True,
+    llm=gemini_llm,
 )

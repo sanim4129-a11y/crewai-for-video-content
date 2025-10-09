@@ -1,6 +1,6 @@
 # tests/test_pipeline.py
 
-from crewai_project.crew import build_crewai_video_crew
+from crew import build_crewai_video_crew
 
 def test_pipeline():
     crew = build_crewai_video_crew()

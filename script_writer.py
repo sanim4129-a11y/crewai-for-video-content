@@ -1,4 +1,5 @@
 from crewai import Agent
+from llm import gemini_llm
 
 script_writer_agent = Agent(
     role="Script Writer",
@@ -13,4 +14,5 @@ script_writer_agent = Agent(
         "and pacing to the target audience."
     ),
     verbose=True,
+    llm=gemini_llm,
 )
