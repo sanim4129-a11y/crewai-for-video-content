@@ -627,4 +627,4 @@ Flexibility (news vs entertainment vs crypto) → Controlled by content style pr
 
 👉 Next step (Step B), I’ll break down the project structure (files, directories, CrewAI config) so you can see how to organize the implementation.
 
-Would you like me to also add a flow diagram (visual workflow) before we go to Step B?
+Would you like me to also add a flow diagram (visual workflow) before we go to Step B?"Edited by Musa" 
